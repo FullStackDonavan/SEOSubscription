@@ -160,7 +160,7 @@ header a {
 }
 /* carousel */
 .carousel {
-  height: 100vh;
+  height: 90vh;
   margin-top: -50px;
   overflow: hidden;
   position: relative;
