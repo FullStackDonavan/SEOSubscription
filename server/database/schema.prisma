@@ -17,6 +17,7 @@ datasource db {
   directUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
+
 model User {
   id               Int            @id @default(autoincrement())
   loginType        String?        @default("email")
@@ -31,7 +32,23 @@ model User {
   answers          Answer[]
   stripeCustomerId String?
   Subscription     Subscription[]
+  insuranceSales   InsuranceSales[]
 }
+
+model InsuranceSales {
+  id          Int      @id @default(autoincrement())
+  seller      User     @relation(fields: [sellerId], references: [id])
+  firstName   String?
+  lastName    String?
+  sellerId    Int
+  carrier     String
+  product     String
+  category    String
+  policyYear  Int
+  price       Decimal
+  paid        Boolean   @default(false) // New field to represent whether the sale has been paid
+}
+
 
 model Session {
   id        Int       @id @default(autoincrement())
@@ -65,7 +82,7 @@ model Question {
   description String
   answers     Answer[]
 
-  @@fulltext([title, description])
+
 }
 
 model Answer {
@@ -76,7 +93,7 @@ model Answer {
   authorId   Int
   text       String @db.Text
 
-  @@fulltext([text])
+  
 }
 
 model Category {
