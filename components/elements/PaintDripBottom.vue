@@ -1,7 +1,7 @@
 <template>
   <svg
     viewBox="0 0 1920 396.2"
-    class="drip bottom third h20"
+    class="drip flipped bottom third h20"
     preserveAspectRatio="none"
     :style="style"
   >
@@ -410,12 +410,21 @@ export default {
 </script>
 
 <style scoped>
+.drip.flipped {
+  transform: rotate(180deg);
+}
 .drip.h20 {
-  height: 25%;
+  height: 25%; /* Default height setting */
+}
+
+@media screen and (max-width: 768px) {
+  .drip.h20 {
+    height: 35%; /* Reset height for screens smaller than 768px */
+  }
 }
 
 .drip.bottom {
-  bottom: -1px;
+  bottom: -50px;
 }
 .drip {
   position: absolute;

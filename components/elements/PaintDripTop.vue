@@ -1,7 +1,7 @@
 <template>
   <svg
     viewBox="0 0 1920 396.2"
-    class="drip top flipped h20"
+    class="drip top h20"
     :style="style"
     preserveAspectRatio="none"
   >
@@ -411,16 +411,19 @@ export default {
 
 <style scoped>
 .drip.h20 {
-  height: 35%;
+  height: 25%; /* Default height setting */
+}
+
+@media screen and (max-width: 768px) {
+  .drip.h20 {
+    height: 35%; /* Reset height for screens smaller than 768px */
+  }
 }
 .drip.top {
-  top: -1px;
+  top: -50px;
 }
 .drip.flipped {
   transform: rotate(180deg);
-}
-.drip.h20 {
-  height: 25%;
 }
 .drip {
   position: absolute;
