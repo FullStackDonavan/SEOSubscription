@@ -1,7 +1,7 @@
 <template>
   <BasicSection class="mt-12">
     <div class="carousel">
-      <!-- list item -->
+      <!-- list items -->
       <div class="list">
         <div class="item" v-for="(item, index) in items" :key="index">
           <img :src="item.img" />
