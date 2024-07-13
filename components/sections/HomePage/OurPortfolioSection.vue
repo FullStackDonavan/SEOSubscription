@@ -42,6 +42,16 @@ export default {
           title: "Custom Painting By Dale",
           image: "/img/custom-painting-by-dale-vercel-app.png",
         },
+        {
+          id: 2,
+          title: "Absolute House Painters",
+          image: "/img/absolutehousepainters.png",
+        },
+        {
+          id: 3,
+          title: "Annapolis Painting",
+          image: "/img/annapolispainting.png",
+        },
       ],
     };
   },
