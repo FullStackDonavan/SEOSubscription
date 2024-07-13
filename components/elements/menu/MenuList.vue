@@ -9,11 +9,11 @@
         </span>
       </nuxt-link>
 
-      <nuxt-link to="/service-area-business-marketing-program">
+      <nuxt-link to="/house-painting-marketing-program">
         <span
           class="text-base font-medium text-gray-500 dark:text-gray-200 hover:text-gray-900 dark:hover:text-gray-300"
         >
-          Service Area Business Marketing
+          House Painting Marketing Program
         </span>
       </nuxt-link>
       <nuxt-link to="/about-us">

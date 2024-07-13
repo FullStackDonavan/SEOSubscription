@@ -76,7 +76,7 @@ export default {
       },
     ]);
 
-    const timeRunning = 3000;
+    const timeRunning = 5000;
     const timeAutoNext = 10000;
     let runTimeOut;
     let runNextAuto;
@@ -404,7 +404,7 @@ header a {
 
 .carousel.next .time,
 .carousel.prev .time {
-  animation: runningTime 3s linear 1 forwards;
+  animation: runningTime 5s linear 1 forwards;
 }
 @keyframes runningTime {
   from {
