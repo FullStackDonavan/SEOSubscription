@@ -67,7 +67,8 @@
       <div class="sm:flex sm:items-center sm:justify-between">
         <span class="text-sm text-gray-800 sm:text-center dark:text-gray-400"
           >© 2023
-          <a href="https://flowbite.com" class="hover:underline">DJ Web Media</a
+          <a href="https://flowbite.com" class="hover:underline"
+            >True Coat Marketing LLC</a
           >. All Rights Reserved.
         </span>
         <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">

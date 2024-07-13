@@ -30,7 +30,7 @@ export default {
         Heading:
           "Promotion Is An Essential Component For Any Service Area Business, And It's Crucial To Understand That Each Service Area Business Has Its Distinct Obstacles And Hurdles To Overcome",
         description:
-          "Each Service Area Business possesses distinctive marketing requirements that necessitate the assistance of a strategic marketing partner to accomplish their objectives and goals. At DJ Web Media, we grasp the intricacies of these various industries and work closely with each business to integrate ourselves into their team.",
+          "Each Service Area Business possesses distinctive marketing requirements that necessitate the assistance of a strategic marketing partner to accomplish their objectives and goals. At True Coat Marketing LLC, we grasp the intricacies of these various industries and work closely with each business to integrate ourselves into their team.",
       },
       Industries: [
         {
