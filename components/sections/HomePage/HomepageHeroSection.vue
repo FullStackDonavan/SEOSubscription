@@ -11,8 +11,9 @@
             <!-- <div class="topic">{{ item.topic }}</div> -->
             <div class="des">{{ item.des }}</div>
             <div class="buttons">
-              <button>SEE MORE</button>
-              <button>SUBSCRIBE</button>
+              <NuxtLink to="/get-started" class="carouselButton center"
+                >Get Started</NuxtLink
+              >
             </div>
           </div>
         </div>
@@ -209,17 +210,36 @@ header a {
   gap: 5px;
   margin-top: 20px;
 }
-.carousel .list .item .buttons button {
+.carousel .list .item .buttons .carouselButton {
   border: none;
-  background-color: #eee;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #eee;
   letter-spacing: 3px;
   font-family: Poppins;
   font-weight: 500;
 }
-.carousel .list .item .buttons button:nth-child(2) {
+.carousel .list .item .buttons {
+  display: flex;
+  align-items: center; /* Centers items vertically */
+  height: 100%; /* Ensures the buttons container takes full height */
+}
+
+.carouselButton {
+  border: none;
   background-color: transparent;
   border: 1px solid #fff;
   color: #eee;
+  letter-spacing: 3px;
+  font-family: Poppins;
+  font-weight: 500;
+  padding: 10px 20px; /* Adjust padding as needed */
+  transition: all 0.3s ease;
+}
+
+.carouselButton:hover {
+  background-color: #fff;
+  color: #000;
 }
 /* thumbail */
 .thumbnail {
