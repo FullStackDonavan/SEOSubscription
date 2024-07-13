@@ -29,8 +29,8 @@
       </div>
       <!-- next prev -->
       <div class="arrows">
-        <button id="prev" @click="showSlider('prev')"><</button>
-        <button id="next" @click="showSlider('next')">></button>
+        <button id="prev" @click="showSlider('prev')">&lt;</button>
+        <button id="next" @click="showSlider('next')">&gt;</button>
       </div>
       <!-- time running -->
       <div class="time"></div>
