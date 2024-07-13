@@ -70,7 +70,7 @@ export default {
         img: "/img/ContractorPainters.jpg",
         author: "TRUECOAT MARKETING LLC",
         title: "Contractor Painters",
-        topic: "ANIMAL",
+        topic: "ANIMALs",
         des: "Empowering contractor painters with strategic marketing solutions to elevate their businesses and attract more clients for lasting success.",
       },
     ]);
