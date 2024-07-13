@@ -39,18 +39,8 @@ export default {
       Items: [
         {
           id: 1,
-          title: "Good Time Travel South",
-          image: "/img/dev-goodtimetravelsc-com.png",
-        },
-        {
-          id: 2,
-          title: "Amerus Pro Painting",
-          image: "/img/Amerus-Pro-Painting-Painter-Painting-Contractor.png",
-        },
-        {
-          id: 3,
-          title: "Lowcountry Powerwashing",
-          image: "",
+          title: "Custom Painting By Dale",
+          image: "/img/custom-painting-by-dale-vercel-app.png",
         },
       ],
     };
