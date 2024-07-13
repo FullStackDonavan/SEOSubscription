@@ -14,7 +14,10 @@ export default defineNuxtConfig({
       
     ]
   },
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxt/content', 'nuxt-icon', '@nuxt/image',],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxt/content', 'nuxt-icon', '@nuxt/image','nuxt-gtag',],
+  gtag: {
+    id: 'UA-103415750-1'
+  }
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css',
     configPath: 'tailwind.config.js',
