@@ -48,28 +48,28 @@ export default {
     const items = ref([
       {
         img: "/img/interior-painting.jpg",
-        author: "TRUECOAT MARKETING LLC",
+        author: "TRUE COAT MARKETING LLC",
         title: "Residential Painters",
         topic: "INTERIOR PAINTING & EXTERIOR PAINTING ",
         des: "Empower your painting business with strategic marketing solutions tailored for local house painters. Expand your reach and attract more clients effectively.",
       },
       {
         img: "/img/ExteriorPainting.jpg",
-        author: "TRUECOAT MARKETING LLC",
+        author: "TRUE COAT MARKETING LLC",
         title: "Commercial Painters",
         topic: "ANIMAL",
         des: "Enhance curb appeal with TrueCoat Marketing LLC. Expert exterior painting solutions tailored for local homes, making every exterior vibrant.",
       },
       {
         img: "/img/SpecialtyPainting.jpg",
-        author: "TRUECOAT MARKETING LLC",
+        author: "TRUE COAT MARKETING LLC",
         title: "Specialty Painters",
         topic: "ANIMAL",
         des: "TrueCoat Marketing LLC: Transforming exteriors with precision. Local specialty painters creating stunning outdoor aesthetics for every project.",
       },
       {
         img: "/img/ContractorPainters.jpg",
-        author: "TRUECOAT MARKETING LLC",
+        author: "TRUE COAT MARKETING LLC",
         title: "Contractor Painters",
         topic: "ANIMALs",
         des: "Empowering contractor painters with strategic marketing solutions to elevate their businesses and attract more clients for lasting success.",
@@ -115,6 +115,13 @@ export default {
     };
 
     onMounted(() => {
+      // Ensure current thumbnail is last
+      const thumbnailBorderDom = document.querySelector(".carousel .thumbnail");
+      const thumbnailItemsDom = thumbnailBorderDom.querySelectorAll(".item");
+
+      // Move the first thumbnail to the last position
+      thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+
       runNextAuto = setTimeout(() => {
         showSlider("next");
       }, timeAutoNext);
