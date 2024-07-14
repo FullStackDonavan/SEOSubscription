@@ -12,7 +12,7 @@
             <div class="des">{{ item.des }}</div>
             <div class="buttons">
               <NuxtLink to="/get-started" class="carouselButton center"
-                >Get Started</NuxtLink
+                >Get Started!</NuxtLink
               >
             </div>
           </div>
