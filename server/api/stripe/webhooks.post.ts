@@ -7,7 +7,7 @@ export default defineEventHandler(async (event) => {
     const stripeEvent = await readBody<Stripe.Event>(event);
     let subscription: Stripe.Subscription | undefined;
 
-    // Handle the stripe event
+    // Handle the stripe event!
     switch (stripeEvent.type) {
       case 'customer.subscription.created':
         subscription = stripeEvent.data.object as Stripe.Subscription;
