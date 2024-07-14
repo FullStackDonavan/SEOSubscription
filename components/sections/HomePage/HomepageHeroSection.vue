@@ -263,7 +263,11 @@ header a {
   height: 220px;
   flex-shrink: 0;
   position: relative;
+  border: 2px solid rgb(138, 138, 138);
+  box-shadow: 0px 10px 10px -3px rgba(0, 0, 0, 0.8);
+  border-radius: 20px; /* Adjust the radius value as needed */
 }
+
 .thumbnail .item img {
   width: 100%;
   height: 100%;
