@@ -72,7 +72,7 @@ export async function handleSubscriptionChange(subscription: Stripe.Subscription
     return true;
   } catch (error) {
     console.error('Error in handleSubscriptionChange:', error);
-    throw error; // Propagate the error to handle it at the caller's level
+    throw error; // Propagate the error to handle it at the caller's level!
   }
 }
 
