@@ -416,7 +416,7 @@ export default {
 
 @media screen and (max-width: 768px) {
   .drip.h20 {
-    height: 35%; /* Reset height for screens smaller than 768px */
+    height: 40%; /* Reset height for screens smaller than 768px */
   }
 }
 .drip.top {
