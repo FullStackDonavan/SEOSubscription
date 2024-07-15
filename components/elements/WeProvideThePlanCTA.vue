@@ -3,8 +3,8 @@
     id="ServiceArea"
     class="mx-auto p-8 bg-blue-400 text-gray-300 dark:bg-amber-400 dark:text-gray-300 text-center map-image flex flex-col justify-center items-center relative dark:bg-indigo-600 text-gray-800"
   >
-    <PaintDripTop fill="60A5FA" v-if="$colorMode.value === 'light'" />
-    <PaintDripTop fill="4F46E5" v-if="$colorMode.value === 'dark'" />
+    <PaintDripTop fill="60A5FA" v-show="!isDark" />
+    <PaintDripTop fill="4F46E5" v-show="isDark" />
     <p class="mb-4 font-extrabold tracking-tight leading-none text-white">
       All From A Company That Exclusively Provides Marketing For Contractors
     </p>
@@ -14,8 +14,8 @@
       We Provide The Plan / To Get You The Leads /
       <strong>That Keeps Your Schedule Full</strong>
     </h3>
-    <PaintDripBottom fill="60A5FA" v-if="$colorMode.value === 'light'" />
-    <PaintDripBottom fill="4F46E5" v-if="$colorMode.value === 'dark'" />
+    <PaintDripBottom fill="60A5FA" v-show="!isDark" />
+    <PaintDripBottom fill="4F46E5" v-show="isDark" />
   </div>
 </template>
 
@@ -26,6 +26,16 @@ export default {
     return {
       colorMode: useColorMode(),
     };
+  },
+  computed: {
+    // const isDark = this.$colorMode.value === "dark";
+    isDark() {
+      if (this.colorMode.preference === "dark") {
+        return true;
+      } else {
+        return false;
+      }
+    },
   },
   mounted() {
     console.log("Current colorMode:", this.colorMode.value);
