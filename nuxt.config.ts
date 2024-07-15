@@ -21,6 +21,7 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@nuxt/image',
     "nuxt-gtag",
+    '@nuxtjs/seo'
   ],
   gtag: {
     id: 'G-22YRGGHBGE'
@@ -67,7 +68,7 @@ export default defineNuxtConfig({
     name: 'True Coat Marketing LLC',
     description: 'Welcome to True Coat Marketing LLC!',
     defaultLocale: 'en', 
-    //indexable: false
+    indexable: false
   },
   robots: {
     enabled: true,
