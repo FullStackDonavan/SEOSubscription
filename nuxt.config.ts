@@ -21,7 +21,6 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@nuxt/image',
     "nuxt-gtag",
-    "@nuxtjs/seo"
   ],
   gtag: {
     id: 'G-22YRGGHBGE'
