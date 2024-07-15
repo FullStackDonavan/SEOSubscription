@@ -61,5 +61,26 @@ export default defineNuxtConfig({
   },
   experimental: {
     writeEarlyHints: false,
-  }
+  },
+  site: {
+    url: 'https://seo-subscription.vercel.app/',
+    name: 'True Coat Marketing LLC',
+    description: 'Welcome to True Coat Marketing LLC!',
+    defaultLocale: 'en', 
+    /indexable: false
+  },
+  robots: {
+    enabled: true,
+  },
+  seo: {
+    redirectToCanonicalSiteUrl: true
+  },
+  schemaOrg: {
+    identity: {
+      type: 'Organization',
+      name: 'True Coat Marketing LLC',
+      url: 'https://seo-subscription.vercel.app/',
+      logo: 'https://seo-subscription.vercel.app/images/logo.png'
+    }
+  },
 })
