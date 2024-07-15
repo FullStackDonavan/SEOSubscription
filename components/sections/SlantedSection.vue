@@ -1,0 +1,76 @@
+<template>
+  <div :class="['relative', sectionClasses]" :style="{ height }">
+    <div
+      :class="[
+        'absolute inset-0',
+        clipClasses,
+        'bg-slate-300',
+        { 'dark:bg-slate-700': isDark },
+      ]"
+    ></div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "SlantedSection",
+  props: {
+    height: {
+      type: String,
+      default: "200px",
+    },
+    reverse: {
+      type: Boolean,
+      default: false,
+    },
+    isTop: {
+      type: Boolean,
+      default: true,
+    },
+  },
+  data() {
+    return {
+      colorMode: useColorMode(),
+    };
+  },
+  computed: {
+    sectionClasses() {
+      return this.isTop ? "" : "-mt-1";
+    },
+    clipClasses() {
+      return this.isTop
+        ? this.reverse
+          ? "clip-bottom-reverse"
+          : "clip-bottom"
+        : this.reverse
+        ? "clip-top-reverse"
+        : "clip-top";
+    },
+    isDark() {
+      if (this.colorMode.preference === "dark") {
+        return true;
+      } else {
+        return false;
+      }
+    },
+  },
+};
+</script>
+
+<style scoped>
+.clip-top {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+}
+
+.clip-top-reverse {
+  clip-path: polygon(0 0, 100% 0, 100% 0, 100% 100%);
+}
+
+.clip-bottom {
+  clip-path: polygon(0 90%, 100% 0, 100% 100%, 0 100%);
+}
+
+.clip-bottom-reverse {
+  clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
+}
+</style>

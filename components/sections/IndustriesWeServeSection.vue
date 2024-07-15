@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4 sm:p-8">
+  <SectionContainer>
     <ParagraphSubHeading>
       {{ IntroText.SubHeading }}
     </ParagraphSubHeading>
@@ -9,7 +9,7 @@
     <ParagraphDescription>
       {{ IntroText.description }}
     </ParagraphDescription>
-  </div>
+  </SectionContainer>
   <div class="bg-gray-100">
     <div class="max-w-full mx-auto flex flex-wrap">
       <!-- First Row -->
@@ -100,6 +100,7 @@
         </div>
       </div>
     </div>
+    <WeProvideThePlanCTA />
   </div>
 </template>
   

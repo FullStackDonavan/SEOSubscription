@@ -8,7 +8,7 @@
     <DominateYourNicheSection />
     <OurPortfolioSection />
     <IndustriesWeServeSection />
-    <WeProvideThePlanCTA />
+
     <ComprehensiveMarketingSolutionsSection />
     <CustomerReviewSection />
     <Ribbon />
