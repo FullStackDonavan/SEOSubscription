@@ -1,5 +1,5 @@
 <template>
-  <div :class="['relative', sectionClasses]" :style="{ height }">
+  <div :class="['relative']" :style="{ height }">
     <div
       :class="[
         'absolute inset-0',
@@ -7,6 +7,7 @@
         'bg-slate-300',
         { 'dark:bg-slate-700': isDark },
       ]"
+      style="bottom: -1px"
     ></div>
   </div>
 </template>
@@ -34,9 +35,6 @@ export default {
     };
   },
   computed: {
-    sectionClasses() {
-      return this.isTop ? "" : "-mt-1";
-    },
     clipClasses() {
       return this.isTop
         ? this.reverse
@@ -67,7 +65,7 @@ export default {
 }
 
 .clip-bottom {
-  clip-path: polygon(0 90%, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
 }
 
 .clip-bottom-reverse {

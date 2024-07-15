@@ -1,7 +1,7 @@
 <template>
   <div>
     <SlantedSection
-      height="200px"
+      height="250px"
       backgroundColor="#CBD5E1"
       :reverse="false"
       :isTop="true"
@@ -34,7 +34,7 @@
       </GridTwoColumns>
     </SectionContainer>
     <SlantedSection
-      height="200px"
+      height="250px"
       backgroundColor="#CBD5E1"
       :reverse="true"
       :isTop="false"
