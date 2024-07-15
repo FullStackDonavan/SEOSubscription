@@ -67,7 +67,7 @@ export default defineNuxtConfig({
     name: 'True Coat Marketing LLC',
     description: 'Welcome to True Coat Marketing LLC!',
     defaultLocale: 'en', 
-    /indexable: false
+    indexable: false
   },
   robots: {
     enabled: true,
