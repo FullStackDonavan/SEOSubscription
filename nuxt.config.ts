@@ -26,13 +26,6 @@ export default defineNuxtConfig({
   gtag: {
     id: 'G-22YRGGHBGE'
   },
-  site: {
-    url: 'https://seo-subscription.vercel.app/',
-    indexable: false,
-    name: 'True Coat Marketing LLC',
-    description: 'Welcome to True Coat Marketing LLC!',
-    defaultLocale: 'en', // not needed if you have @nuxtjs/i18n installed
-  },
   
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css',
