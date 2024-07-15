@@ -18,3 +18,25 @@
     <PaintDripBottom fill="4F46E5" v-if="$colorMode.value == 'dark'" />
   </div>
 </template>
+
+
+
+<script>
+export default {
+  name: "WeProvideThePlanCTA",
+  data() {
+    return {
+      colorMode: useColorMode(),
+    };
+  },
+  computed: {
+    isDark() {
+      if (this.colorMode.preference === "dark") {
+        return true;
+      } else {
+        return false;
+      }
+    },
+  },
+};
+</script>
