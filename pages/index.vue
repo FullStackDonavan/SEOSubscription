@@ -7,7 +7,7 @@
     <WeProvideThePlanCTA />
     <DominateYourNicheSection />
     <OurPortfolioSection />
-    <!-- <IndustriesWeServeSection /> -->
+    <IndustriesWeServeSection />
 
     <ComprehensiveMarketingSolutionsSection />
     <CustomerReviewSection />
