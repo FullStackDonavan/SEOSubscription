@@ -2,10 +2,9 @@
   <div :class="['relative']" :style="{ height }">
     <div
       :class="[
-        'absolute inset-0',
+        'dark:bg-slate-700 absolute inset-0',
         clipClasses,
         'bg-slate-300',
-        { 'dark:bg-slate-700': isDark },
       ]"
       style="bottom: -1px"
     ></div>
@@ -43,13 +42,6 @@ export default {
         : this.reverse
         ? "clip-top-reverse"
         : "clip-top";
-    },
-    isDark() {
-      if (this.colorMode.preference === "dark") {
-        return true;
-      } else {
-        return false;
-      }
     },
   },
 };

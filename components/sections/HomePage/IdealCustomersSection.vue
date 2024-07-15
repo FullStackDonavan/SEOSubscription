@@ -9,8 +9,7 @@
     <SectionContainer>
       <GridTwoColumns>
         <div class="p-4 sm:p-8">
-          <img src="/img/Conversations-Tab.jpg" v-show="isDark" />
-          <img src="/img/Conversations-Tab.jpg" v-show="!isDark" />
+          <img src="/img/Conversations-Tab.jpg" />
         </div>
         <div class="p-4 sm:p-8">
           <ParagraphSubHeading>
