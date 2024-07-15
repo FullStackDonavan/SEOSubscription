@@ -21,22 +21,3 @@
 
 
 
-<script>
-export default {
-  name: "WeProvideThePlanCTA",
-  data() {
-    return {
-      colorMode: useColorMode(),
-    };
-  },
-  computed: {
-    isDark() {
-      if (this.colorMode.preference === "dark") {
-        return true;
-      } else {
-        return false;
-      }
-    },
-  },
-};
-</script>
