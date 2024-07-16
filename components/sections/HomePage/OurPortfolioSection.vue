@@ -32,9 +32,9 @@ export default {
       IntroText: {
         SubHeading: "Examples of Recently Launched Websites",
         Heading:
-          "Launching A New Website Is Always An Exciting Event, And This Was Undoubtedly The Case For These Recent Website Launches!",
+          "Launching A New Website Is Always Exciting, And These Recent Launches Were No Exception!",
         description:
-          "Our team will construct your website without any additional build charges beyond our monthly fee. Additionally, our skilled marketing team can assist you in creating a comprehensive marketing strategy for your business. This comprises paid online advertising via Google and Facebook, social media management, email marketing, and printing marketing services.",
+          "Our team builds your website with no extra build charges beyond the monthly fee. We also offer expert marketing services including Google and Facebook ads, social media management, email marketing, and print marketing.",
       },
       Items: [
         {

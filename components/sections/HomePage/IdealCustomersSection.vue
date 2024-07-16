@@ -50,7 +50,7 @@ export default {
           "To Expand Your Business, Increase Online Leads, Calls, And Revenue",
         Headline: "Engage With Your Ideal Customers",
         description:
-          "Empower your small business with the Conversations Tab, a dynamic feature on our software. This tool is crafted to enhance communication and elevate customer engagement. Integrated seamlessly, it serves as a centralized hub for managing conversations, inquiries, and leads. Small businesses can efficiently track and respond to customer interactions, ensuring a personalized and timely approach. The Conversations Tab becomes the go-to platform for managing communication across various channels, from social media to website inquiries, streamlining processes and fostering meaningful connections with clients. With its user-friendly interface and robust features, small businesses using this software can enhance their customer relations, ultimately driving growth and success.",
+          "Empower your small business with the Conversations Tab, a dynamic feature crafted to enhance communication and elevate customer engagement. Integrated seamlessly, it serves as a centralized hub for managing conversations, inquiries, and leads. Small businesses can efficiently track and respond to customer interactions, ensuring a personalized and timely approach. The Conversations Tab streamlines processes across various channels, from social media to website inquiries, fostering meaningful connections with clients. With its intuitive interface and powerful features, this software enriches customer relations, driving sustained growth and success.",
       },
     };
   },

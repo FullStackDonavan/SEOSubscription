@@ -111,7 +111,7 @@ export default {
       IntroText: {
         SubHeading: "Residential And Commerical Painting Businesses We Serve",
         Heading:
-          "Promotion Is An Essential Component For Any Residential Or Commerical Painting Businesses, And It's Crucial To Understand That Each Residential Or Commerical Painting Businesses Has Its Distinct Obstacles And Hurdles To Overcome",
+          "Promotion Is Crucial For Residential Or Commercial Painting Businesses, Each Facing Unique Challenges And Hurdles",
         description:
           "Each Residential Or Commerical Painting Businesses possesses distinctive marketing requirements that necessitate the assistance of a strategic marketing partner to accomplish their objectives and goals. At True Coat Marketing LLC, we grasp the intricacies of these various industries and work closely with each business to integrate ourselves into their team.",
       },

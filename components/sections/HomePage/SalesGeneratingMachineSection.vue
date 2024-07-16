@@ -40,7 +40,7 @@ export default {
         SubHeading: "Expert Website Design and Development",
         Heading: "Transform Your Website into a Sales Generating Machine",
         description:
-          "Integrating our advanced automation system directly into your website is a game-changer. With seamless API integration, your platform takes the lead in delivering powerful automated marketing campaigns, smooth client communications, and precise data tracking. Elevate your business by offering a tailored, state-of-the-art solution that enhances your online presence and gives you a competitive edge in the digital landscape. Explore the full potential of our API integration and transform your website into a dynamic, high-performing platform.",
+          "Integrating our advanced automation system into your website is a game-changer. With seamless API integration, your platform leads in automated marketing campaigns, client communications, and data tracking. Elevate your business with a tailored solution that enhances your online presence and gives a competitive edge. Explore our API integration to transform your website into a dynamic, high-performing platform.",
       },
     };
   },
