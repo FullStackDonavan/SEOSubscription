@@ -93,7 +93,7 @@ const scrollNext = () => {
 }
 .item {
   border-radius: 15px;
-  width: 300px; /* Original width of each item */
+  width: 400px; /* Original width of each item */
   overflow: hidden;
   transition: transform 0.3s ease; /* Add transform animation for smoothness */
   margin: 10px;
