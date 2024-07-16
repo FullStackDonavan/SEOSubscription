@@ -19,7 +19,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxt/content',
     'nuxt-icon',
-    '@nuxt/image'
+    '@nuxt/image',
   ],
   
   tailwindcss: {
@@ -58,4 +58,5 @@ export default defineNuxtConfig({
   experimental: {
     writeEarlyHints: false,
   },
+  
 })
