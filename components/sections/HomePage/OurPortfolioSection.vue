@@ -1,5 +1,5 @@
 <template>
-  <BasicSection class="container mx-auto mt-20">
+  <BasicSection>
     <div class="p-4 sm:p-8">
       <ParagraphSubHeading>
         {{ IntroText.SubHeading }}
@@ -11,8 +11,9 @@
         {{ IntroText.description }}
       </ParagraphDescription>
     </div>
+    <MagicCarousel />
   </BasicSection>
-  <div class="p-4 sm:p-8">
+  <!-- <div class="p-4 sm:p-8">
     <CardDeckThreeColumns>
       <LaunchCard
         v-for="Item in Items"
@@ -21,7 +22,7 @@
         :image="Item.image"
       />
     </CardDeckThreeColumns>
-  </div>
+  </div> -->
 </template>
 
 <script>
