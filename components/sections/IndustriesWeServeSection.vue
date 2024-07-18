@@ -1,5 +1,5 @@
 <template>
-  <SectionContainer class="mt-8">
+  <SectionContainer>
     <ParagraphSubHeading>
       {{ IntroText.SubHeading }}
     </ParagraphSubHeading>

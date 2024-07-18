@@ -1,6 +1,7 @@
 <template>
   <PatternSection>
-    <ServiceAreaBusinessHeroSection />
+    <!-- <HousePainterCompanyMarketingHeroSection /> -->
+    <BasicImageSlider />
     <IndustriesWeServeSection />
     <WhatsCoveredInOurProgramSection />
     <ProfessionalWebAppDesignSection />
