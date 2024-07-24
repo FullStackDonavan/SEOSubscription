@@ -11,9 +11,9 @@
             <!-- <div class="topic">{{ item.topic }}</div> -->
             <div class="des">{{ item.des }}</div>
             <div class="buttons">
-              <NuxtLink to="/get-started" class="carouselButton center"
-                >Get Started!</NuxtLink
-              >
+              <NuxtLink to="/get-started" class="carouselButton center">
+                Get Started!
+              </NuxtLink>
             </div>
           </div>
         </div>
@@ -30,8 +30,12 @@
       </div>
       <!-- next prev -->
       <div class="arrows">
-        <button id="prev" @click="showSlider('prev')">&lt;</button>
-        <button id="next" @click="showSlider('next')">&gt;</button>
+        <button id="prev" @click="showSlider('prev')" :disabled="disableArrows">
+          &lt;
+        </button>
+        <button id="next" @click="showSlider('next')" :disabled="disableArrows">
+          &gt;
+        </button>
       </div>
       <!-- time running -->
       <div class="time"></div>
@@ -40,48 +44,29 @@
 </template>
 
 <script>
-import { ref, onMounted, onBeforeUnmount } from "vue";
+import { ref, onMounted, onBeforeUnmount, watch } from "vue";
 
 export default {
-  name: "HeroSection",
-  setup() {
-    const items = ref([
-      {
-        img: "/img/interior-painting.jpg",
-        author: "TRUE COAT MARKETING LLC",
-        title: "Residential",
-        topic: "INTERIOR PAINTING & EXTERIOR PAINTING ",
-        des: "Empower your painting business with strategic marketing solutions tailored for local house painters. Expand your reach and attract more clients effectively.",
-      },
-      {
-        img: "/img/ExteriorPainting.jpg",
-        author: "TRUE COAT MARKETING LLC",
-        title: "Commercial",
-        topic: "ANIMAL",
-        des: "Enhance curb appeal with TrueCoat Marketing LLC. Expert exterior painting solutions tailored for local homes, making every exterior vibrant.",
-      },
-      {
-        img: "/img/SpecialtyPainting.jpg",
-        author: "TRUE COAT MARKETING LLC",
-        title: "Specialty",
-        topic: "ANIMAL",
-        des: "TrueCoat Marketing LLC: Transforming exteriors with precision. Local specialty painters creating stunning outdoor aesthetics for every project.",
-      },
-      {
-        img: "/img/ContractorPainters.jpg",
-        author: "TRUE COAT MARKETING LLC",
-        title: "Contractor",
-        topic: "ANIMALs",
-        des: "Empowering contractor painters with strategic marketing solutions to elevate their businesses and attract more clients for lasting success.",
-      },
-    ]);
-
+  name: "MagicImageSlider",
+  props: {
+    items: {
+      type: Array,
+      required: true,
+    },
+    disableArrows: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  setup(props) {
     const timeRunning = 5000;
     const timeAutoNext = 10000;
     let runTimeOut;
     let runNextAuto;
 
     const showSlider = (type) => {
+      if (props.disableArrows) return; // Exit if arrows are disabled
+
       const sliderDom = document.querySelector(".carousel .list");
       const sliderItemsDom = sliderDom.querySelectorAll(
         ".carousel .list .item"
@@ -132,8 +117,18 @@ export default {
       clearTimeout(runNextAuto);
     });
 
+    // Watch for changes in disableArrows prop
+    watch(
+      () => props.disableArrows,
+      (newVal) => {
+        const arrows = document.querySelectorAll(".carousel .arrows button");
+        arrows.forEach((arrow) => {
+          arrow.disabled = newVal;
+        });
+      }
+    );
+
     return {
-      items,
       showSlider,
     };
   },

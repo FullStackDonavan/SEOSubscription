@@ -1,12 +1,13 @@
 <template>
   <PatternSection>
-    <GetStartedHeroSection />
-    <CustomerReviewSection />
+    <ZoomSlider />
+    <CustomerGuaranteesSection />
     <NotJustaWebsite />
     <OurServicesSection />
     <WeProvideThePlanCTA />
     <WhenYouRegister />
     <YourSitesLaunch />
+    <CustomerReviewSection />
     <Ribbon />
   </PatternSection>
 </template>

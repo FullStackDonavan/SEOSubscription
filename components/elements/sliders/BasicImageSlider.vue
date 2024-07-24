@@ -36,12 +36,14 @@
       <button
         id="prev"
         class="w-12 h-12 rounded-full bg-white/30 text-white border-none font-mono font-bold"
+        @click="prevSlide"
       >
         &lt;
       </button>
       <button
         id="next"
         class="w-12 h-12 rounded-full bg-white/30 text-white border-none font-mono font-bold"
+        @click="nextSlide"
       >
         &gt;
       </button>
@@ -59,52 +61,25 @@
     </ul>
   </div>
 </template>
-  
-  
-  <script>
-export default defineComponent({
-  setup() {
+
+<script>
+import { ref, onMounted } from "vue";
+
+export default {
+  props: {
+    slides: {
+      type: Array,
+      required: true,
+    },
+  },
+  setup(props) {
     const slider = ref(null);
-    const slides = ref([
-      {
-        image: "/img/interior-painting.jpg",
-        title: "Interior Painting",
-        description:
-          "Transform your home with our professional interior painting services.",
-        buttonText: "Get Started",
-        link: "/get-started", // Update to the route you want
-      },
-      {
-        image: "/img/ExteriorPainting.jpg",
-        title: "Exterior Painting",
-        description:
-          "Enhance your curb appeal with our expert exterior painting solutions.",
-        buttonText: "Get Started",
-        link: "/get-started", // Update to the route you want
-      },
-      {
-        image: "/img/SpecialtyPainting.jpg",
-        title: "Specialty Painting",
-        description:
-          "Custom painting services for unique and creative projects.",
-        buttonText: "Get Started",
-        link: "/get-started", // Update to the route you want
-      },
-      {
-        image: "/img/ContractorPainters.jpg",
-        title: "Contractor Painters",
-        description:
-          "Reliable and efficient painting contractors for your projects.",
-        buttonText: "Get Started",
-        link: "/get-started", // Update to the route you want
-      },
-    ]);
     const activeIndex = ref(0);
     let refreshInterval = null;
 
     const nextSlide = () => {
       activeIndex.value =
-        activeIndex.value + 1 < slides.value.length ? activeIndex.value + 1 : 0;
+        activeIndex.value + 1 < props.slides.length ? activeIndex.value + 1 : 0;
       reloadSlider();
     };
 
@@ -112,7 +87,7 @@ export default defineComponent({
       activeIndex.value =
         activeIndex.value - 1 >= 0
           ? activeIndex.value - 1
-          : slides.value.length - 1;
+          : props.slides.length - 1;
       reloadSlider();
     };
 
@@ -124,7 +99,7 @@ export default defineComponent({
       }
 
       clearInterval(refreshInterval);
-      refreshInterval = setInterval(nextSlide, 3000);
+      refreshInterval = setInterval(nextSlide, 5000);
     };
 
     const goToSlide = (index) => {
@@ -133,30 +108,21 @@ export default defineComponent({
     };
 
     onMounted(() => {
-      const nextButton = document.getElementById("next");
-      const prevButton = document.getElementById("prev");
-
-      nextButton.addEventListener("click", nextSlide);
-      prevButton.addEventListener("click", prevSlide);
-
-      refreshInterval = setInterval(nextSlide, 3000);
-
-      window.addEventListener("resize", reloadSlider);
+      refreshInterval = setInterval(nextSlide, 5000);
       reloadSlider();
     });
 
     return {
       slider,
-      slides,
       activeIndex,
       nextSlide,
       prevSlide,
       goToSlide,
     };
   },
-});
+};
 </script>
-  
+
 <style scoped>
 .slider .list {
   left: 0;

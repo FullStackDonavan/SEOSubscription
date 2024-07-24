@@ -1,5 +1,11 @@
 <template>
-  <section class="container mx-auto mt-20">
+  <SlantedSection
+    height="250px"
+    backgroundColor="#CBD5E1"
+    :reverse="false"
+    :isTop="true"
+  />
+  <SectionContainer>
     <GridTwoColumns>
       <div>
         <img src="/img/Transform-Your-Website.jpg" v-show="isDark" />
@@ -27,7 +33,13 @@
         </div>
       </div>
     </GridTwoColumns>
-  </section>
+  </SectionContainer>
+  <SlantedSection
+    height="250px"
+    backgroundColor="#CBD5E1"
+    :reverse="true"
+    :isTop="false"
+  />
 </template>
 
 <script>

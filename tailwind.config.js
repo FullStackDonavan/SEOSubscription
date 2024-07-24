@@ -8,8 +8,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: colors.gray
-      }
+        primary: colors.gray,
+        'custom-gradient-from': '#320643',
+        'custom-gradient-to': '#140534',
+      },
+      backgroundImage: {
+        'radial-gradient': 'radial-gradient(var(--tw-gradient-stops))',
+      },
     }
   }
 }

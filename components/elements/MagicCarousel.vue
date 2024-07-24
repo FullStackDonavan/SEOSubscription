@@ -8,13 +8,13 @@
   </div>
 
   <div class="direction flex justify-center items-center">
-    <button id="prev" @click="scrollPrev">&lt;</button>
-    <button id="next" @click="scrollNext">&gt;</button>
+    <ArrowButtons :disabled="isDisabled" @click="handleArrowClick" />
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
+import ArrowButtons from "~/components/elements/sliders/ArrowButtons.vue";
 
 const formList = ref(null);
 const items = ref([
@@ -56,6 +56,8 @@ const items = ref([
   },
 ]);
 
+const isDisabled = ref(false);
+
 const scrollPrev = () => {
   const widthItem = formList.value.querySelector(".item").offsetWidth;
   formList.value.scrollTo({
@@ -70,6 +72,14 @@ const scrollNext = () => {
     left: formList.value.scrollLeft + widthItem,
     behavior: "smooth",
   });
+};
+
+const handleArrowClick = (direction) => {
+  if (direction === "prev") {
+    scrollPrev();
+  } else if (direction === "next") {
+    scrollNext();
+  }
 };
 </script>
 

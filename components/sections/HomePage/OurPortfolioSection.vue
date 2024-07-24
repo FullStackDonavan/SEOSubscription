@@ -1,5 +1,5 @@
 <template>
-  <BasicSection>
+  <BasicSection class="mb-4">
     <div class="p-4 sm:p-8">
       <ParagraphSubHeading>
         {{ IntroText.SubHeading }}

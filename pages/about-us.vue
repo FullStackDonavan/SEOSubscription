@@ -1,6 +1,7 @@
 <template>
   <PatternSection>
     <AboutPageHeroSection />
+    <FadeSlider />
     <YourContractorMarketingExperts />
     <BeyondTheLaunch />
     <IndustriesWeServeSection />
