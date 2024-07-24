@@ -20,7 +20,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     'nuxt-icon',
     '@nuxt/image',
-    "@nuxtjs/robots"
+    '@nuxt/robots'
   ],
   
   tailwindcss: {
