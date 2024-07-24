@@ -20,6 +20,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     'nuxt-icon',
     '@nuxt/image',
+    "@nuxtjs/robots"
   ],
   
   tailwindcss: {
@@ -58,5 +59,5 @@ export default defineNuxtConfig({
   experimental: {
     writeEarlyHints: false,
   },
-  
+  site: { indexable: false }
 })
