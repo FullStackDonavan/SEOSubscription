@@ -13,7 +13,7 @@ export default {
         'custom-gradient-to': '#140534',
       },
       backgroundImage: {
-        'radial-gradient': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-radial': 'radial-gradient(circle, #320643, #140534)',
       },
     }
   }
