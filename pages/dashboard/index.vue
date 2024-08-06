@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import QuestionBoard from "~/components/elements/QuestionBoard.vue";
 import DashboardSidebar from "~~/components/elements/DashboardSidebar.vue";
-import PipelineHeader from "~~/components/dashboard/PipelineHeader.vue"; // Add this line
+// import PipelineHeader from "~~/components/dashboard/PipelineHeader.vue";
 import Tiptap from "~~/components/elements/Tiptap.vue";
 </script>
  
@@ -24,7 +24,7 @@ import Tiptap from "~~/components/elements/Tiptap.vue";
     <div class="md:flex min-h-full">
       <DashboardSidebar />
       <div class="md:w-1/3 z-1 flex justify-right relative">
-        <PipelineHeader />
+        <!-- <PipelineHeader /> -->
       </div>
     </div>
   </PatternSection>

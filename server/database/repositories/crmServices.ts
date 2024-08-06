@@ -13,9 +13,9 @@ export async function createGHLContact(data: IUser) {
     "lastName": data.lastName,
     "email": data.email,
     "phone": data.phone,
-    tags: [
+    "tags": [
       "newClient"
-  ],
+  ]
   });
 
 
