@@ -6,7 +6,7 @@ export async function createGHLContact(data: IUser) {
   console.log(data)
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
-  myHeaders.append("Authorization", `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2NhdGlvbl9pZCI6ImZVeTdYRFY4SE45ejhxNWQ5Z0pSIiwidmVyc2lvbiI6MSwiaWF0IjoxNzIyOTg0OTI0ODQxLCJzdWIiOiJLaW9JT0J4c1JBdEpQazU5RHJPcCJ9._MThcHaSS702t3kOS5bgo18pyyr54DKq_eWnq4dQ-9c`);
+  myHeaders.append("Authorization", `${process.env.GHL_API_KEY}`);
 
   var raw = JSON.stringify({
     "firstName": data.firstName,
