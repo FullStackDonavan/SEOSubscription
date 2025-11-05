@@ -2,42 +2,84 @@
   <PatternSection>
     <BasicImageSlider :slides="imageSlides" />
 
-    <!-- Hero / Intro Section -->
-    <section class="prose dark:prose-invert max-w-3xl mx-auto my-10">
-      <h1>Insurance Broker Marketing Program</h1>
-      <p>
+<!-- Hero / Intro Section -->
+<section class="container mx-auto mt-20">
+  <GridTwoColumns>
+    <!-- Left Column (Text) -->
+    <div>
+      <ParagraphSubHeading>
+        Insurance Broker Marketing Program
+      </ParagraphSubHeading>
+
+      <HeadlineTwo>
+        Attract Qualified Leads & Grow Your Brokerage
+      </HeadlineTwo>
+
+      <ParagraphDescription>
         Attract qualified agents, agencies, and broker partners with a marketing system built for insurance growth.
         From SEO to lead funnels, we help brokerages scale their reach, improve digital presence, and convert quote
         seekers into lifelong clients.
-      </p>
+      </ParagraphDescription>
 
-      <h2>What We Emphasize for Insurance Brokers</h2>
-      <ul>
-        <li><strong>Visibility:</strong> SEO strategies tailored to insurance and financial keywords.</li>
-        <li><strong>Lead Flow:</strong> Conversion-driven landing pages, forms, and CRM integration.</li>
-        <li><strong>Trust Signals:</strong> Licensed brokerage credibility, client testimonials, and compliance language.</li>
-        <li><strong>Automation:</strong> Email nurturing, retargeting, and follow-up sequences for brokers and prospects.</li>
+      <ul class="list-disc ml-5 space-y-2 mt-6 text-slate-600 dark:text-slate-300">
+        <li>
+          <strong>Visibility:</strong> SEO strategies tailored to insurance and financial keywords.
+        </li>
+        <li>
+          <strong>Lead Flow:</strong> Conversion-driven landing pages, forms, and CRM integration.
+        </li>
+        <li>
+          <strong>Trust Signals:</strong> Licensed brokerage credibility, client testimonials, and compliance language.
+        </li>
+        <li>
+          <strong>Automation:</strong> Email nurturing, retargeting, and follow-up sequences for brokers and prospects.
+        </li>
       </ul>
 
-      <h3>Suggested Imagery</h3>
-      <ul>
-        <li>Broker dashboard & analytics — <code>/img/Our-Platform.jpg</code></li>
-        <li>SEO and conversion funnel graphics — <code>/img/Sales-Generating-Machine-Light.png</code></li>
-        <li>Lead form & CTA visuals — <code>/img/Transform-Your-Website.jpg</code></li>
-      </ul>
-    </section>
+      <div
+        class="flex flex-col mb-8 lg:mb-16 mt-8 space-y-4 sm:flex-row sm:justify-left sm:space-y-0 sm:space-x-4"
+      >
+        <NuxtLink
+          to="/get-started"
+          class="text-slate-100 hover:text-slate-300 dark:hover:text-slate-100 dark:text-slate-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:focus:ring-amber-800 bg-blue-400 hover:bg-blue-800 dark:bg-amber-500 dark:hover:bg-amber-600 font-medium text-sm rounded-lg px-5 py-2.5 mr-2 mb-2"
+        >
+          Learn More About Our Program
+        </NuxtLink>
+      </div>
+    </div>
+
+    <!-- Right Column (Image) -->
+    <div class="flex justify-center items-center">
+      <img
+        src="/img/Our-Platform.jpg"
+        alt="Insurance broker marketing dashboard"
+        class="rounded-2xl shadow-lg w-full object-cover"
+        v-show="!isDark"
+      />
+      <img
+        src="/img/Our-Platform.jpg"
+        alt="Insurance broker marketing dashboard dark mode"
+        class="rounded-2xl shadow-lg w-full object-cover"
+        v-show="isDark"
+      />
+    </div>
+  </GridTwoColumns>
+</section>
+
 
     <!-- Core Program Sections -->
-    <WhatsCoveredInOurProgramSection />
+    <!-- <WhatsCoveredInOurProgramSection />
     <ProfessionalWebAppDesignSection />
     <SearchEngineOptimizationSection />
-    <LocalOptimizationSection />
+    <LocalOptimizationSection /> -->
 
     <!-- Program Details Navigation -->
     <ProgramDetailsNav 
       basePath="/insurance-broker-marketing-program" 
       :links="programLinks" 
     />
+
+    <ProgramStats :stats="programStats" />
 
     <!-- Problem / Solution Section -->
     <ProblemSolutionSection
@@ -191,7 +233,21 @@ export default {
           { label: 'SEO Workflow Diagram', file: '/img/Our-Platform.jpg' },
           { label: 'CRM & Lead Dashboard', file: '/img/Transform-Your-Website.jpg' }
         ]
-      }
+      },
+       programStats: [
+  {
+    title: 'Water Systems Installed',
+    value: '2,500+',
+    icon: 'mdi:water',
+    description: 'Residential and commercial systems'
+  },
+  {
+    title: 'Customer Retention',
+    value: '92%',
+    icon: 'mdi:account-heart',
+    description: 'Annual contract renewals'
+  }
+]
     };
   },
 };

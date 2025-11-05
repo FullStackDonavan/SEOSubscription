@@ -1,49 +1,81 @@
 <template>
-  <section :class="sectionClass">
-    <h1 v-if="title" class="mb-4">{{ title }}</h1>
+  <section class="w-full bg-slate-50 dark:bg-slate-900/50 shadow-lg" :class="isDense ? 'py-8' : 'py-10'">
+    <div :class="sectionClass">
+      <h1
+        v-if="title"
+        :class="[
+          isDense ? 'mb-3 text-xl md:text-2xl' : 'mb-4 text-2xl md:text-3xl',
+          'font-semibold tracking-tight text-slate-900 dark:text-white'
+        ]"
+      >
+        {{ title }}
+      </h1>
 
-    <div v-if="intro">
-      <p v-if="typeof intro === 'string'">{{ intro }}</p>
-      <template v-else>
-        <p v-for="(p, i) in intro" :key="'intro'+i">{{ p }}</p>
-      </template>
+      <!-- Intro, compact by default -->
+      <div v-if="intro" class="not-prose" :class="isDense ? 'text-sm text-slate-700 dark:text-slate-200 mb-4' : 'mb-6'">
+        <p v-if="typeof intro === 'string'">{{ intro }}</p>
+        <template v-else>
+          <p v-for="(p, i) in intro" :key="'intro'+i">{{ p }}</p>
+        </template>
+      </div>
+
+    <!-- Two-column layout: Steps (left) | Outcomes + CTA + Imagery (right) -->
+    <div class="not-prose grid md:grid-cols-2 md:gap-6 gap-4">
+      <!-- Left column: Steps as compact cards grid -->
+      <div v-if="steps?.length">
+        <h2 v-if="stepsTitle" :class="[
+          isDense ? 'text-base' : 'text-lg',
+          'mb-2 font-semibold text-slate-900 dark:text-white pl-3 border-l-4 border-indigo-500/70'
+        ]">{{ stepsTitle }}</h2>
+        <div :class="isDense ? 'grid sm:grid-cols-2 gap-3' : 'space-y-3'">
+          <div v-for="(s, i) in steps" :key="'step'+i" class="rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm" :class="isDense ? 'p-4' : 'p-5'">
+            <div v-if="s.title" :class="['font-semibold', isDense ? 'text-slate-900 dark:text-white text-sm' : '']">{{ s.title }}</div>
+            <div v-if="s.description" :class="isDense ? 'text-sm text-slate-700 dark:text-slate-200 mt-1' : 'mt-1'">{{ s.description }}</div>
+            <div v-if="s.duration" :class="isDense ? 'text-xs opacity-70 mt-2' : 'text-sm opacity-70 mt-2'">Estimated: {{ s.duration }}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column: Outcomes, Imagery (compact) -->
+      <div class="flex flex-col">
+        <div v-if="outcomes?.length">
+          <h2 v-if="outcomesTitle" :class="[
+            isDense ? 'text-base' : 'text-lg',
+            'mb-2 font-semibold text-slate-900 dark:text-white pl-3 border-l-4 border-indigo-500/70'
+          ]">{{ outcomesTitle }}</h2>
+          <div class="grid gap-2" :class="isDense ? 'sm:grid-cols-2' : ''">
+            <div v-for="(o, i) in outcomes" :key="'out'+i" class="rounded-md border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 text-slate-800 dark:text-slate-200" :class="isDense ? 'text-sm px-3 py-2' : 'px-4 py-2'">
+              {{ o }}
+            </div>
+          </div>
+        </div>
+
+        <div v-if="suggestedImagery?.length" :class="isDense ? 'mt-6' : 'mt-8'">
+          <h3 :class="[
+            isDense ? 'text-sm' : 'text-base',
+            'font-semibold text-slate-900 dark:text-white uppercase tracking-wide'
+          ]">Suggested imagery</h3>
+          <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-2 mt-2">
+            <div v-for="(img, i) in suggestedImagery" :key="'si'+i" class="rounded-md border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-800/70" :class="isDense ? 'p-3' : 'p-4'">
+              <div class="font-medium text-slate-900 dark:text-white" :class="isDense ? 'text-sm' : ''">{{ img.label }}</div>
+              <div v-if="img.file" class="text-slate-600 dark:text-slate-300 mt-1" :class="isDense ? 'text-xs' : 'text-sm'">
+                file: <code>{{ img.file }}</code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div v-if="steps?.length" class="mt-6">
-      <h2 v-if="stepsTitle">{{ stepsTitle }}</h2>
-      <ol class="list-decimal pl-6 space-y-2">
-        <li v-for="(s, i) in steps" :key="'step'+i">
-          <div v-if="s.title" class="font-semibold">{{ s.title }}</div>
-          <div v-if="s.description">{{ s.description }}</div>
-          <div v-if="s.duration" class="text-sm opacity-70">Estimated: {{ s.duration }}</div>
-        </li>
-      </ol>
-    </div>
-
-    <div v-if="outcomes?.length" class="mt-6">
-      <h2 v-if="outcomesTitle">{{ outcomesTitle }}</h2>
-      <ul class="list-disc pl-6">
-        <li v-for="(o, i) in outcomes" :key="'out'+i">{{ o }}</li>
-      </ul>
-    </div>
-
-    <div v-if="ctaText && ctaHref" class="mt-6">
-      <nuxt-link :to="ctaHref" class="inline-flex items-center rounded-md bg-indigo-600 text-white px-4 py-2 hover:bg-indigo-500 transition">
+    <!-- CTA button in its own row -->
+    <div v-if="ctaText && ctaHref" :class="isDense ? 'mt-6' : 'mt-8'" class="not-prose">
+      <nuxt-link :to="ctaHref" class="inline-flex items-center rounded-md bg-indigo-600 text-white hover:bg-indigo-500 transition" :class="isDense ? 'px-3 py-2 text-sm' : 'px-4 py-2'">
         {{ ctaText }}
       </nuxt-link>
     </div>
 
-    <div v-if="suggestedImagery?.length" class="mt-8">
-      <h3>Suggested imagery</h3>
-      <ul class="list-disc pl-6">
-        <li v-for="(img, i) in suggestedImagery" :key="'si'+i">
-          <span v-if="img.label">{{ img.label }}</span>
-          <template v-if="img.file"> — file: <code>{{ img.file }}</code></template>
-        </li>
-      </ul>
-    </div>
-
     <slot />
+    </div>
   </section>
 </template>
 
@@ -75,8 +107,10 @@ const props = defineProps<{
   dense?: boolean
 }>()
 
+const isDense = computed(() => props.dense ?? true)
+
 const sectionClass = computed(() => {
-  const base = 'prose dark:prose-invert max-w-3xl mx-auto my-10'
+  const base = 'container mx-auto'
   return `${base} ${props.containerClass || ''}`.trim()
 })
 </script>

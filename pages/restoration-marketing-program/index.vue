@@ -1,45 +1,111 @@
 <template>
   <PatternSection>
-    <BasicImageSlider :slides="imageSlides" />
+        <BasicImageSlider :slides="imageSlides" />
+    <!-- Hero / Intro Section -->
+    <section class="container mx-auto mt-20">
+      <GridTwoColumns>
+        <!-- Left Column (Text) -->
+        <div>
+          <ParagraphSubHeading>
+            Insurance Broker Marketing Program
+          </ParagraphSubHeading>
+
+          <HeadlineTwo>
+            Attract Qualified Leads & Grow Your Brokerage
+          </HeadlineTwo>
+
+          <ParagraphDescription>
+            In insurance, timing and trust are everything. Many brokerages lose high-intent prospects because their websites are slow, invisible in search, or lack credibility when clients are ready to act. 
+            Our system ensures your brokerage captures every lead and converts them efficiently.
+          </ParagraphDescription>
+
+          <ul class="list-disc ml-5 space-y-2 mt-6 text-slate-600 dark:text-slate-300">
+            <li>
+              <strong>Visibility:</strong> SEO strategies targeting high-intent insurance and financial keywords.
+            </li>
+            <li>
+              <strong>Conversion:</strong> Landing pages, forms, and funnels designed to turn visitors into quote requests.
+            </li>
+            <li>
+              <strong>Trust Signals:</strong> Licensed brokerage credibility, client testimonials, and compliance language.
+            </li>
+            <li>
+              <strong>Automation:</strong> Email nurturing, retargeting, and follow-up sequences for prospects and agents.
+            </li>
+          </ul>
+
+          <div
+            class="flex flex-col mb-8 lg:mb-16 mt-8 space-y-4 sm:flex-row sm:justify-left sm:space-y-0 sm:space-x-4"
+          >
+            <NuxtLink
+              to="/get-started"
+              class="text-slate-100 hover:text-slate-300 dark:hover:text-slate-100 dark:text-slate-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:focus:ring-amber-800 bg-blue-400 hover:bg-blue-800 dark:bg-amber-500 dark:hover:bg-amber-600 font-medium text-sm rounded-lg px-5 py-2.5 mr-2 mb-2"
+            >
+              Learn More About Our Program
+            </NuxtLink>
+          </div>
+        </div>
+
+        <!-- Right Column (Image) -->
+        <div class="flex justify-center items-center">
+          <img
+            src="/img/Our-Platform.jpg"
+            alt="Insurance broker marketing dashboard"
+            class="rounded-2xl shadow-lg w-full object-cover"
+            v-show="!isDark"
+          />
+          <img
+            src="/img/Our-Platform.jpg"
+            alt="Insurance broker marketing dashboard dark mode"
+            class="rounded-2xl shadow-lg w-full object-cover"
+            v-show="isDark"
+          />
+        </div>
+      </GridTwoColumns>
+    </section>
 
     <!-- Problem / Solution section -->
     <ProblemSolutionSection
-      :title="problemSolution.title"
-      :problem="problemSolution.problem"
-      :solution="problemSolution.solution"
-      :suggestedImagery="problemSolution.suggestedImagery"
+      :title="insuranceProblemSolution.title"
+      :problem="insuranceProblemSolution.problem"
+      :solution="insuranceProblemSolution.solution"
+      
     />
 
     <!-- Approach / Process section -->
     <ApproachProcessSection
-      :title="approachProcess.title"
-      :intro="approachProcess.intro"
-      :stepsTitle="approachProcess.stepsTitle"
-      :steps="approachProcess.steps"
-      :outcomesTitle="approachProcess.outcomesTitle"
-      :outcomes="approachProcess.outcomes"
-      :ctaText="approachProcess.ctaText"
-      :ctaHref="approachProcess.ctaHref"
-      :suggestedImagery="approachProcess.suggestedImagery"
+      :title="insuranceApproachProcess.title"
+      :intro="insuranceApproachProcess.intro"
+      :stepsTitle="insuranceApproachProcess.stepsTitle"
+      :steps="insuranceApproachProcess.steps"
+      :outcomesTitle="insuranceApproachProcess.outcomesTitle"
+      :outcomes="insuranceApproachProcess.outcomes"
+      :ctaText="insuranceApproachProcess.ctaText"
+      :ctaHref="insuranceApproachProcess.ctaHref"
     />
 
-    <WhatsCoveredInOurProgramSection />
+    <!-- <WhatsCoveredInOurProgramSection />
     <ProfessionalWebAppDesignSection />
     <SearchEngineOptimizationSection />
-    <LocalOptimizationSection />
+    <LocalOptimizationSection /> -->
+
     <ProgramDetailsNav 
-      basePath="/restoration-marketing-program" 
+      basePath="/insurance-marketing-program" 
       :links="programLinks" 
     />
-    <nuxt-link to="/restoration-marketing-program/online-review-management-system">
+
+    <ProgramStats :stats="programStats" />
+
+    <nuxt-link to="/insurance-marketing-program/online-review-management-system">
       <OptimizingYourReviewsSection />
     </nuxt-link>
-    <nuxt-link to="/restoration-marketing-program/website-updates-and-improvements">
+    <nuxt-link to="/insurance-marketing-program/website-updates-and-improvements">
       <WebsiteUpdatesAndImprovementsSection />
     </nuxt-link>
-    <nuxt-link to="/restoration-marketing-program/marketing-planning">
+    <nuxt-link to="/insurance-marketing-program/marketing-planning">
       <MarketingPlanningSection />
     </nuxt-link>
+
     <Ribbon />
   </PatternSection>
 </template>
@@ -56,86 +122,86 @@ export default {
       imageSlides: [
         {
           image: "/img/Services-Are-Being-Searched.jpg",
-          title: "Emergency Restoration Leads",
-          description: "Capture high-intent calls for water, fire, mold, and storm restoration.",
+          title: "Qualified Insurance Leads",
+          description: "Capture high-intent prospects looking for insurance quotes and broker services.",
           buttonText: "Get Started",
           link: "/get-started",
         },
         {
           image: "/img/Not-Just-A-Website.jpg",
           title: "Beyond a Website",
-          description: "Conversion-first funnels built for urgent service requests.",
+          description: "Conversion-first funnels for agents, agencies, and brokers.",
           buttonText: "Get Started",
           link: "/get-started",
         },
         {
           image: "/img/Our-Platform.jpg",
-          title: "Local Visibility",
-          description: "Rank in the map pack and neighborhood searches.",
+          title: "Local & Online Visibility",
+          description: "Rank for insurance, broker, and agent keywords across your target markets.",
           buttonText: "Get Started",
           link: "/get-started",
         },
         {
           image: "/img/Sales-Generating-Machine.png",
           title: "Built to Convert",
-          description: "Clear CTAs, trust signals, and review flows that drive inbound jobs.",
+          description: "Clear CTAs, trust signals, and follow-up sequences that drive quote submissions.",
           buttonText: "Get Started",
           link: "/get-started",
         },
       ],
 
-      problemSolution: {
-        title: 'Emergency Calls, Lost Opportunities',
+      insuranceProblemSolution: {
+        title: 'High-Intent Leads Lost Online',
         problem: {
           heading: 'The Problem',
           description: [
-            'In restoration, timing is everything. Many companies lose high-intent jobs because their websites are slow, invisible in local search, or lack trust signals when homeowners are in crisis.'
+            'Many insurance brokerages lose high-intent leads because their websites are slow, hard to find in search, or lack credibility signals for clients and agents.'
           ],
           points: [
             'Outdated or unoptimized Google Business Profiles',
-            'Weak call-to-actions and unclear service coverage',
-            'No system for fast lead follow-up or review requests'
+            'Weak call-to-actions and unclear services coverage',
+            'No automated follow-up or nurturing system'
           ]
         },
         solution: {
           heading: 'Our Solution',
           description: [
-            'We position your business as the go-to restoration team for fire, water, and mold emergencies. Our marketing systems combine fast-loading pages, emergency-focused SEO, and review automation to turn every call into a confirmed job.'
+            'We position your brokerage as the trusted source for insurance quotes, agent recruitment, and partner referrals. Our marketing system combines fast-loading pages, SEO targeting, and automated lead nurturing to convert more prospects into clients.'
           ],
           points: [
-            'Local SEO that dominates emergency and “near me” searches',
-            'Conversion-focused landing pages for each service type',
-            'Integrated call tracking and review follow-up flows'
+            'Targeted SEO for insurance and financial keywords',
+            'Conversion-focused landing pages for each service or partner type',
+            'Automated email and retargeting sequences to nurture leads'
           ]
         },
         suggestedImagery: [
-          { label: 'Emergency Response Teams', file: '/img/Our-Platform.jpg' },
-          { label: 'Before & After Restoration Projects', file: '/img/Transform-Your-Website.jpg' }
+          { label: 'Broker Dashboard & Analytics', file: '/img/Our-Platform.jpg' },
+          { label: 'Lead Funnel Visual', file: '/img/Sales-Generating-Machine-Light.png' }
         ]
       },
 
-      approachProcess: {
-        title: 'Our Process for Restoration Growth',
+      insuranceApproachProcess: {
+        title: 'Our Process for Insurance Growth',
         intro: [
-          'From the moment someone searches “water damage near me,” your marketing should respond with the same urgency as your crew in the field. Our process builds a strong, measurable system for capturing those calls and converting them into lasting customers.'
+          'From the moment someone searches “insurance quotes near me,” your marketing should respond with the same urgency as restoration crews handling emergencies. We capture, nurture, and convert leads efficiently while building trust.'
         ],
         stepsTitle: 'How We Work',
         steps: [
-          { title: 'Discovery', description: 'We analyze your service areas, damage categories, and insurance partnerships to target high-value local searches.', duration: '30–45 min' },
-          { title: 'Build & Optimize', description: 'We develop SEO-driven pages, conversion funnels, and call tracking for water, fire, and mold restoration.', duration: '1–2 weeks' },
-          { title: 'Review & Refine', description: 'We monitor lead quality, keyword rankings, and review volume to continuously improve performance.', duration: 'Ongoing' }
+          { title: 'Discovery', description: 'We assess your target markets, services, and existing digital presence to find opportunities.', duration: '30–45 min' },
+          { title: 'Build & Optimize', description: 'We create SEO-optimized landing pages, conversion funnels, and automated follow-up for insurance leads.', duration: '1–2 weeks' },
+          { title: 'Review & Refine', description: 'We monitor lead quality, search rankings, and engagement to continuously improve results.', duration: 'Ongoing' }
         ],
         outcomesTitle: 'What You Get',
         outcomes: [
-          'Consistent, qualified inbound leads year-round',
-          'Higher conversion rates from emergency search traffic',
-          'A trusted brand reputation backed by visible reviews'
+          'Consistent, qualified inbound insurance leads',
+          'Higher conversion rates from search traffic',
+          'A trusted brokerage reputation backed by reviews and testimonials'
         ],
-        ctaText: 'Start Your Restoration Marketing Plan',
+        ctaText: 'Start Your Insurance Marketing Plan',
         ctaHref: '/get-started',
         suggestedImagery: [
-          { label: 'Emergency Call Funnels', file: '/img/Sales-Generating-Machine-Light.png' },
-          { label: 'Map Pack Rankings Visual', file: '/img/Our-Platform.jpg' }
+          { label: 'Conversion Funnel Dashboard', file: '/img/Sales-Generating-Machine-Light.png' },
+          { label: 'SEO & Rankings Visual', file: '/img/Our-Platform.jpg' }
         ]
       },
 
@@ -176,7 +242,21 @@ export default {
           iconColor: 'text-green-500',
           text: 'Marketing Planning'
         }
-      ]
+      ],
+       programStats: [
+  {
+    title: 'Water Systems Installed',
+    value: '2,500+',
+    icon: 'mdi:water',
+    description: 'Residential and commercial systems'
+  },
+  {
+    title: 'Customer Retention',
+    value: '92%',
+    icon: 'mdi:account-heart',
+    description: 'Annual contract renewals'
+  }
+]
     };
   },
 };

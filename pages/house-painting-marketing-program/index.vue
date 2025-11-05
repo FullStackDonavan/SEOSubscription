@@ -2,6 +2,71 @@
   <PatternSection>
     <BasicImageSlider :slides="imageSlides" />
 
+    <!-- Intro Section -->
+    <section class="container mx-auto mt-20">
+      <GridTwoColumns>
+        <!-- Left Column (Text) -->
+        <div>
+          <ParagraphSubHeading>
+            House Painting Marketing Program
+          </ParagraphSubHeading>
+
+          <HeadlineTwo>
+            Book More Interior & Exterior Paint Jobs
+          </HeadlineTwo>
+
+          <ParagraphDescription>
+            Book more interior and exterior painting projects with a system built for professional painters.
+            We highlight the craftsmanship homeowners care about—prep, clean lines, durable finishes, and on-time delivery—
+            and make it simple for them to request an estimate.
+          </ParagraphDescription>
+
+          <ul class="list-disc ml-5 space-y-2 mt-6 text-slate-600 dark:text-slate-300">
+            <li>
+              <strong>Prep storytelling:</strong> washing, scraping, sanding, caulking, priming—the foundation of a lasting finish.
+            </li>
+            <li>
+              <strong>High-intent services:</strong> interiors, exteriors, cabinets, decks/fences, stucco/brick, color consultation.
+            </li>
+            <li>
+              <strong>Conversion UX:</strong> clear CTAs, quick quote forms, and trust badges (license, insurance, warranty).
+            </li>
+            <li>
+              <strong>Proof:</strong> before/after galleries, materials used, and care instructions.
+            </li>
+          </ul>
+
+          <div
+            class="flex flex-col mb-8 lg:mb-16 mt-8 space-y-4 sm:flex-row sm:justify-left sm:space-y-0 sm:space-x-4"
+          >
+            <NuxtLink
+              to="/get-started"
+              class="text-slate-100 hover:text-slate-300 dark:hover:text-slate-100 dark:text-slate-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:focus:ring-amber-800 bg-blue-400 hover:bg-blue-800 dark:bg-amber-500 dark:hover:bg-amber-600 font-medium text-sm rounded-lg px-5 py-2.5 mr-2 mb-2"
+            >
+              Learn More About Our Program
+            </NuxtLink>
+          </div>
+        </div>
+
+        <!-- Right Column (Image) -->
+        <div class="flex justify-center items-center">
+          <img
+            src="/img/interior-painting.jpg"
+            alt="Interior painting before and after"
+            class="rounded-2xl shadow-lg w-full object-cover"
+            v-show="!isDark"
+          />
+          <img
+            src="/img/interior-painting.jpg"
+            alt="Interior painting before and after dark mode"
+            class="rounded-2xl shadow-lg w-full object-cover"
+            v-show="isDark"
+          />
+        </div>
+      </GridTwoColumns>
+    </section>
+
+
     <!-- Problem / Solution section -->
     <ProblemSolutionSection
       :title="problemSolution.title"
@@ -23,14 +88,16 @@
       :suggestedImagery="approachProcess.suggestedImagery"
     />
 
-    <WhatsCoveredInOurProgramSection />
+    <!-- <WhatsCoveredInOurProgramSection />
     <ProfessionalWebAppDesignSection />
     <SearchEngineOptimizationSection />
-    <LocalOptimizationSection />
+    <LocalOptimizationSection /> -->
     <ProgramDetailsNav 
       basePath="/house-painting-marketing-program" 
       :links="programLinks" 
     />
+
+    <ProgramStats :stats="programStats" />
     <nuxt-link to="/house-painting-marketing-program/online-review-management-system">
       <OptimizingYourReviewsSection />
     </nuxt-link>
@@ -184,7 +251,21 @@ export default {
           iconColor: "text-green-500",
           text: "Marketing Planning"
         }
-      ]
+      ],
+       programStats: [
+  {
+    title: 'Water Systems Installed',
+    value: '2,500+',
+    icon: 'mdi:water',
+    description: 'Residential and commercial systems'
+  },
+  {
+    title: 'Customer Retention',
+    value: '92%',
+    icon: 'mdi:account-heart',
+    description: 'Annual contract renewals'
+  }
+]
     };
   },
 };

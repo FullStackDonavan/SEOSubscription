@@ -2,7 +2,7 @@
   <PatternSection>
     <BasicImageSlider :slides="imageSlides" />
 
-        <!-- Intro Section -->
+    <!-- Intro Section -->
     <section class="container mx-auto mt-20">
       <GridTwoColumns>
         <!-- Left Column (Text) -->
@@ -53,13 +53,13 @@
           <img
             src="/img/Transform-Your-Website.jpg"
             alt="Water treatment marketing illustration"
-            class="rounded-2xl shadow-lg w-full max-w-md object-cover"
+            class="rounded-2xl shadow-lg w-full object-cover"
             v-show="!isDark"
           />
           <img
             src="/img/Transform-Your-Website.jpg"
             alt="Water treatment marketing illustration dark mode"
-            class="rounded-2xl shadow-lg w-full max-w-md object-cover"
+            class="rounded-2xl shadow-lg w-full object-cover"
             v-show="isDark"
           />
         </div>
@@ -93,7 +93,7 @@
     />
 
 
-
+<ProgramStats :stats="programStats" />
 
     <WhatsCoveredInOurProgramSection />
     <ProfessionalWebAppDesignSection />
@@ -243,6 +243,20 @@ export default {
           text: "Marketing Planning",
         },
       ],
+       programStats: [
+  {
+    title: 'Water Systems Installed',
+    value: '2,500+',
+    icon: 'mdi:water',
+    description: 'Residential and commercial systems'
+  },
+  {
+    title: 'Customer Retention',
+    value: '92%',
+    icon: 'mdi:account-heart',
+    description: 'Annual contract renewals'
+  }
+]
     };
   },
 };
