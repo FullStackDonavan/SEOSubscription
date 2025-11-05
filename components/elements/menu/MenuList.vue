@@ -9,6 +9,14 @@
         </span>
       </nuxt-link>
 
+      <nuxt-link to="/who-we-serve">
+        <span
+          class="text-base font-medium text-gray-500 dark:text-gray-200 hover:text-gray-900 dark:hover:text-gray-300"
+        >
+          Who We Serve
+        </span>
+      </nuxt-link>
+
       <nuxt-link to="/house-painting-marketing-program">
         <span
           class="text-base font-medium text-gray-500 dark:text-gray-200 hover:text-gray-900 dark:hover:text-gray-300"

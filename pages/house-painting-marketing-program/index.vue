@@ -1,21 +1,51 @@
 <template>
   <PatternSection>
-    <!-- <HousePainterCompanyMarketingHeroSection /> -->
     <BasicImageSlider :slides="imageSlides" />
+
+    <!-- Problem / Solution section -->
+    <ProblemSolutionSection
+      :title="problemSolution.title"
+      :problem="problemSolution.problem"
+      :solution="problemSolution.solution"
+      :suggestedImagery="problemSolution.suggestedImagery"
+    />
+
+    <!-- Approach / Process section -->
+    <ApproachProcessSection
+      :title="approachProcess.title"
+      :intro="approachProcess.intro"
+      :stepsTitle="approachProcess.stepsTitle"
+      :steps="approachProcess.steps"
+      :outcomesTitle="approachProcess.outcomesTitle"
+      :outcomes="approachProcess.outcomes"
+      :ctaText="approachProcess.ctaText"
+      :ctaHref="approachProcess.ctaHref"
+      :suggestedImagery="approachProcess.suggestedImagery"
+    />
+
     <WhatsCoveredInOurProgramSection />
     <ProfessionalWebAppDesignSection />
     <SearchEngineOptimizationSection />
     <LocalOptimizationSection />
-    <WeProvideThePlanCTA />
-    <OptimizingYourReviewsSection />
-    <WebsiteUpdatesAndImprovementsSection />
-    <MarketingPlanningSection />
+    <ProgramDetailsNav 
+      basePath="/house-painting-marketing-program" 
+      :links="programLinks" 
+    />
+    <nuxt-link to="/house-painting-marketing-program/online-review-management-system">
+      <OptimizingYourReviewsSection />
+    </nuxt-link>
+    <nuxt-link to="/house-painting-marketing-program/website-updates-and-improvements">
+      <WebsiteUpdatesAndImprovementsSection />
+    </nuxt-link>
+    <nuxt-link to="/house-painting-marketing-program/marketing-planning">
+      <MarketingPlanningSection />
+    </nuxt-link>
     <Ribbon />
   </PatternSection>
 </template>
 
 <script>
-import BasicImageSlider from "@/components/elements/sliders/BasicImageSlider.vue"; // Adjust the path as needed
+import BasicImageSlider from "@/components/elements/sliders/BasicImageSlider.vue";
 
 export default {
   components: {
@@ -28,7 +58,7 @@ export default {
           image: "/img/interior-painting.jpg",
           title: "Interior Painting",
           description:
-            "Transform your home with our professional interior painting services.",
+            "Transform homes with beautiful finishes that make every space feel new again.",
           buttonText: "Get Started",
           link: "/get-started",
         },
@@ -36,7 +66,7 @@ export default {
           image: "/img/ExteriorPainting.jpg",
           title: "Exterior Painting",
           description:
-            "Enhance your curb appeal with our expert exterior painting solutions.",
+            "Boost curb appeal with clean lines, color precision, and weather-resistant coatings.",
           buttonText: "Get Started",
           link: "/get-started",
         },
@@ -44,19 +74,117 @@ export default {
           image: "/img/SpecialtyPainting.jpg",
           title: "Specialty Painting",
           description:
-            "Custom painting services for unique and creative projects.",
+            "Cabinet refinishing, decks, and detail work that showcase craftsmanship.",
           buttonText: "Get Started",
           link: "/get-started",
         },
         {
           image: "/img/ContractorPainters.jpg",
-          title: "Contractor Painters",
+          title: "Painting Contractors",
           description:
-            "Reliable and efficient painting contractors for your projects.",
+            "Marketing systems that keep your crew booked and your phone ringing.",
           buttonText: "Get Started",
           link: "/get-started",
         },
       ],
+
+      problemSolution: {
+        title: "Booked Schedules, Not Empty Weeks",
+        problem: {
+          heading: "The Problem",
+          description: [
+            "Many painting companies depend on word-of-mouth and inconsistent referrals. Without a predictable system for generating leads, painters often experience slow seasons, low visibility online, and missed estimates."
+          ],
+          points: [
+            "Low visibility in local searches for painting and repainting services",
+            "Websites that don’t showcase craftsmanship or trust signals",
+            "Few or outdated Google reviews limiting credibility",
+            "No streamlined process for capturing and following up with leads"
+          ]
+        },
+        solution: {
+          heading: "Our Solution",
+          description: [
+            "We help professional painters build steady, measurable pipelines of interior and exterior painting projects. From high-ranking SEO pages to simple quote request funnels, our marketing system turns your expertise into consistent booked jobs."
+          ],
+          points: [
+            "Targeted local SEO for high-intent searches like 'house painter near me'",
+            "Conversion-driven website with quote forms and review proof",
+            "Automated follow-ups and review requests to increase close rates",
+            "Visual galleries and service pages that build instant trust"
+          ]
+        },
+        suggestedImagery: [
+          { label: "Interior Living Room Before & After", file: "/img/interior-painting.jpg" },
+          { label: "Exterior Home Repaint Prep & Finish", file: "/img/ExteriorPainting.jpg" },
+          { label: "Cabinet & Trim Detail Shots", file: "/img/SpecialtyPainting.jpg" }
+        ]
+      },
+
+      approachProcess: {
+        title: "Our Process for Painting Business Growth",
+        intro: [
+          "We’ve refined a marketing process that helps painters go from relying on word-of-mouth to owning their local market. It’s built around visibility, credibility, and effortless follow-up — the essentials for keeping your calendar full all year."
+        ],
+        stepsTitle: "How We Work",
+        steps: [
+          { title: "Discovery & Planning", description: "We learn about your service areas, specialties, and customer base to tailor a marketing plan that fits your painting business goals.", duration: "30–45 min" },
+          { title: "Design & Build", description: "We create a beautiful, conversion-optimized website with photo galleries, clear CTAs, and SEO content targeting local painting services.", duration: "1–2 weeks" },
+          { title: "Optimize & Promote", description: "We enhance your local SEO rankings, Google profile, and reviews so your business appears at the top when homeowners search for painters near them.", duration: "Ongoing" }
+        ],
+        outcomesTitle: "What You Get",
+        outcomes: [
+          "Consistent quote requests from nearby homeowners",
+          "Higher Google rankings for painting and repainting services",
+          "A professional online presence that reflects your craftsmanship",
+          "Better customer follow-up and more 5-star reviews"
+        ],
+        ctaText: "Start Your Painting Marketing Plan",
+        ctaHref: "/get-started",
+        suggestedImagery: [
+          { label: "Local SEO Map Rankings", file: "/img/ExteriorPainting.jpg" },
+          { label: "Painter Quote Funnel UI", file: "/img/interior-painting.jpg" }
+        ]
+      },
+
+      programLinks: [
+        {
+          path: "search-engine-optimization",
+          icon: "mdi:magnify",
+          iconColor: "text-indigo-500",
+          text: "Search Engine Optimization"
+        },
+        {
+          path: "local-optimization-management",
+          icon: "mdi:map-marker",
+          iconColor: "text-rose-500",
+          text: "Local Optimization Management"
+        },
+        {
+          path: "online-review-management-system",
+          icon: "mdi:star",
+          iconColor: "text-amber-500",
+          text: "Online Review Management"
+        },
+        {
+          path: "web-application-design",
+          icon: "mdi:palette",
+          iconColor: "text-purple-500",
+          text: "Web Application Design"
+        },
+        {
+          path: "website-updates-and-improvements",
+          icon: "mdi:update",
+          iconColor: "text-cyan-500",
+          text: "Website Updates & Improvements"
+        },
+        {
+          path: "marketing-planning",
+          icon: "mdi:calendar-check",
+          iconColor: "text-green-500",
+          text: "Marketing Planning"
+        }
+      ]
     };
   },
 };
